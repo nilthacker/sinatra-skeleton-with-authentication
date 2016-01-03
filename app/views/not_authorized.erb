@@ -1,0 +1,7 @@
+<div class="container" align="center">
+  <% if @logged_in_as %>
+    <p>You are currently logged in as <b><%= @logged_in_as.email %></b> and are not authorized to see this page.</p>
+  <% else %>
+    <p>You are not authorized to see this page.</p>
+  <% end %>
+</div>
