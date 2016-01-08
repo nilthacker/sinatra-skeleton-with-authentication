@@ -4,6 +4,6 @@ get '/' do
 end
 
 get '/secret' do
-  redirect '/login' unless session[:user_id]
+  redirect '/sessions/new' unless session[:user_id]
   "Secret area!"
 end
