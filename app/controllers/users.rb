@@ -11,7 +11,8 @@ post '/users/new' do
   @user = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email])
   @user.password = params[:password_plaintext]
   if @user.save
-    redirect "/sessions/new"
+    session[:user_id] = @user.id
+    redirect '/'
   else
     @errors = @user.errors.full_messages
     erb :register
